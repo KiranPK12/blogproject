@@ -16,7 +16,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-my_email = os.getenv("EMAIL")
+my_email = os.environ.get("EMAIL")
+print(my_email)
 password = os.getenv("PASSWORD")
 
 app = Flask(__name__)
@@ -25,7 +26,7 @@ ckeditor = CKEditor(app)
 Bootstrap(app)
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL1",'localhost:9200')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL1",'localhost:9200')
 print(os.getenv("DATABASE_URL1"))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
