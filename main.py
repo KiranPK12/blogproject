@@ -12,6 +12,7 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 from functools import wraps
 from dotenv import load_dotenv
+import psycopg2
 
 load_dotenv()
 
